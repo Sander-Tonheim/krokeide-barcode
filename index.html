@@ -6,6 +6,7 @@
 				id="qr-reader"
 				style="width: 500px"></div>
 			<div id="qr-reader-results"></div>
+			<div id="result"></div>
 		</body>
 		<script src="/html5-qrcode.min.js"></script>
 		<script src="https://unpkg.com/html5-qrcode"></script>
@@ -19,6 +20,8 @@
 					++countResults;
 					lastResult = decodedText;
 					// Handle on success condition with the decoded message.
+					const result = document.getElementById("result");
+					result.append(`Scan result ${decodedText}`, decodedResult);
 					console.log(`Scan result ${decodedText}`, decodedResult);
 				}
 			}
